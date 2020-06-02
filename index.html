@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+  <title>Paged.js Fixture</title>
+
+  <script src="vendor/pagedjs/dist/paged.polyfill.js"></script>
+  <link href="main.css" rel="stylesheet" />
+  <script type="module" src="scripts/vellum.js"></script>
+
+</head>
+
+<body>
+
+  <main>
+    <h3>Describing NPCs</h3>
+
+    <p>NPCs are described using a specialised character block that provides the essential information to roleplay then. This is called the NPC block</p>
+
+    <p>Throughout this section we will be using the following NPC block as an example:</p>
+
+    <vellum-npc
+      class="official"
+      name="Lyrum"
+      race="elf"
+      statblock="archmage"
+      alignment="lawful neutral"
+      attitude="hostile"
+      description="Lyrum is a thin and pasty elf with a painful-looking humped back. His black hair hangs down in long, greasy rat tails. Black marks under his rheumy eyes indicate a severe lack of sleep.">
+
+      <vellum-stat class="trait" name="Brusque (Personality Trait).">Lyrum is often rude to those he considers less intelligent.</vellum-stat>
+
+      <vellum-stat class="trait" name="Ponderous (Personality Trait).">Lyrum choose his words carefully and speaks slowly and thoughtfully.</vellum-stat>
+
+      <vellum-stat class="trait" name="Greater Good (Ideal)."> The strong, not the good, must lead for humanity to prosper. (Lawful)</vellum-stat>
+
+      <vellum-stat class="trait" name="Advisor to King Jorl (Bond).">Through ruthless manipulation Lyrum maintains his position as chief advisor to the King.</vellum-stat>
+
+      <vellum-stat class="trait" name="Pain (Flaw).">Lyrum suffers from incessant pain, causing him to lose sleep and often leading to poor judgement.</vellum-stat>
+
+      <vellum-stat-block-section name="Secrets">
+        <vellum-stat class="trait" name="Plots to Overthrow the Throne.">Despite his obsequious manner, Lyrum believes King Jorl is weak and plots to replace him.</vellum-stat>
+
+        <vellum-stat class="trait" name="Magi of the Order.">Lyrum is a member of the Order of the Magi. <em>Tell.</em> A DC 15 Wisdom (Perception) check will reveal a strange tattoo on Lyrum's right wrist. A DC 20 Intelligence (Arcana) check will reveal this is the symbol of the Order of the Magi.</vellum-stat>
+      </vellum-stat-block-section>
+      <vellum-stat-block-section name="Habits">
+        <vellum-stat class="action">Roll a d6 to determine what Lyrum is doing when encountered:
+          <vellum-stat class="table-row" name="1-2.">Painfully struggling with some mundane task, i.e. climbing stairs.</vellum-stat>
+          <vellum-stat class="table-row" name="3-4.">Supervising the torture of an enemy of the king.</vellum-stat>
+          <vellum-stat class="table-row" name="5-6.">Wandering alone in thought.</vellum-stat>
+        </vellum-stat>
+      </vellum-stat-block-section>
+
+    </vellum-npc>
+
+    <h4>Stat Block</h4>
+
+    <p>An NPC block references a stat block in bold that the NPC would use in combat. This might be qualified by a race, otherwise the NPC is assumed to be human. This would normally be a NPC stat block from Appendix B in the <em>Monster Manual</em>.</p>
+
+    <p>While roleplaying the NPC use the NPC block. If the NPC enters melee use stat block for combat.</p>
+
+    <h4>Alignment</h4>
+
+    <p>Like monsters, NPCs can have an alignment. NPCs are rarely unaligned however.</p>
+
+    <h4>Attitude</h4>
+
+    <p>In addition to alignment, the parenthesis after the stat block might also include the NPCs starting attitude: friendly, hostile or indifferent (see chapter 8 of the <em>Dungeon Master's Guide</em>). If it doesn't, the starting attitude should be assumed to be indifferent.</p>
+
+    <h4>Description</h4>
+
+    <p>After the header follows a block of read-aloud text describing the NPC's physical appearance.</p>
+
+    <h4>Personality Characteristics</h4>
+
+    <p>Following the description are the NPC's personal characteristics. These are typically the same as for the PCs: two personality traits, an ideal, bond and flaw. The exception is an NPC's bond which typically describes The NPC's role, job or most important title.</p>
+
+    <h4>Skills</h4>
+
+    <p>Some NPCs have additional skills. These are listed in the NPC block Skills entry.</p>
+
+    <h4>Languages</h4>
+
+    <p>Similarly, some NPCs have additional languages. These are listed in the NPC block Languages entry.</p>
+
+    <h4>Secrets</h4>
+
+    <p>Secrets are the mysterious elements of an NPC: hidden agendas, shady pasts or foul allegiances.</p>
+
+    <p>Some secrets have a tell: something about the NPC only observant or knowledgeable characters might notice through a skill check. Other secrets may only be uncovered through play.</p>
+
+    <h4>Habits</h4>
+
+    <p>Habits are the everyday things an NPC might be doing when the party encounters them.</p>
+
+    <h4>Minor NPCs</h4>
+
+    <p>Not all NPCs need the all the descriptors detailed above. Minor NPCs are typically nameless characters, useful only for brief encounters. Minor NPCs are also useful as templates for creating more detailed, non-combat encounters.</p>
+
+    <p>Minor NPCs only have the following:</p>
+
+    <ul>
+      <li>Stat Block</li>
+      <li>Alignment</li>
+      <li>1-2 Personality characteristics</li>
+      <li>Optionally 1-2 skills</li>
+      <li>Optionally 1-2 languages</li>
+      <li>Habits</li>
+    </ul>
+
+    <p>For example:</p>
+
+    <vellum-npc
+      id="blacksmith"
+      name="Blacksmith"
+      alignment="any lawful alignment"
+      statblock="commoner"
+    >
+      <vellum-stat name="Industrious (Ideal).">Hard-work is its own reward. (Lawful).</vellum-stat>
+      <vellum-stat name="Proud (Flaw).">My work is heavily tied to my self-worth.</vellum-stat>
+
+      <vellum-stat-block-divider></vellum-stat-block-divider>
+
+      <vellum-stat name="Skills">Smith's tools +6</vellum-stat>
+      <vellum-stat name="Languages">Common</vellum-stat>
+
+      <vellum-stat-block-section name="Habits">
+        <vellum-stat class="action">Roll a d6 to determine what the blacksmith is doing when encountered:
+          <vellum-stat class="table-row" name="1-2.">Furiously forging something with their hammer.</vellum-stat>
+          <vellum-stat class="table-row" name="3-4.">Smoking a pipe while brooding.</vellum-stat>
+          <vellum-stat class="table-row" name="5-6.">Angrily berating an idle apprentice.</vellum-stat>
+        </vellum-stat>
+      </vellum-stat-block-section>
+    </vellum-npc>
+
+    <h3>Creating NPCs</h3>
+
+    <table>
+      <caption>Folk</caption>
+      <thead>
+        <tr>
+          <th>d100</th>
+          <th>Folk</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1-50</td>
+          <td>Common Folk (see <ink-page-ref ref="common-folk"></ink-page-ref>)</td>
+        </tr>
+        <tr>
+          <td>51-85</td>
+          <td>Outlaws</td>
+        </tr>
+        <tr>
+          <td>86-85</td>
+          <td>Merchants</td>
+        </tr>
+        <tr>
+          <td>96-00</td>
+          <td>Noble Folk</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Traits</h4>
+    <table>
+      <caption>Distinctive Features</caption>
+      <thead>
+      <tr>
+      <th>d100</th>
+      <th>Distinctive Feature</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+      <td>1</td>
+      <td>Extremely tall</td>
+      </tr>
+      <tr>
+      <td>2</td>
+      <td>Extremely short</td>
+      </tr>
+      <tr>
+      <td>3</td>
+      <td>Port-wine stain on face</td>
+      </tr>
+      <tr>
+      <td>4</td>
+      <td>Greasy, lank hair</td>
+      </tr>
+      <tr>
+      <td>5</td>
+      <td>Mullet <!-- yawn --></td>
+      </tr>
+      <tr>
+      <td>6</td>
+      <td>Distinctive tattoo on face (roll on tattoo table)</td>
+      </tr>
+      <tr>
+      <td>7</td>
+      <td>One eye is a different colour from the other.</td>
+      </tr>
+      <tr>
+      <td>8</td>
+      <td>Hair that sticks straight up <!-- yawn --></td>
+      </tr>
+      <tr>
+      <td>9</td>
+      <td>Painfully thin <!-- yawn --></td>
+      </tr>
+      <tr>
+      <td>10</td>
+      <td>Round face <!-- yawn --></td>
+      </tr>
+      <tr>
+      <td>11</td>
+      <td>Long nose <!-- yawn --></td>
+      </tr>
+      <tr>
+      <td>12</td>
+      <td>Broken nose</td>
+      </tr>
+      <tr>
+      <td>13</td>
+      <td>Dreadlocks</td>
+      </tr>
+      <tr>
+      <td>14</td>
+      <td>Elaborately pierced ears</td>
+      </tr>
+      <tr>
+      <td>15</td>
+      <td>Masked (roll on mask table)</td>
+      </tr>
+      <tr>
+      <td>16</td>
+      <td>Hawk-like beak of a nose</td>
+      </tr>
+      <tr>
+      <td>17</td>
+      <td>Bright red hair</td>
+      </tr>
+      <tr>
+      <td>18</td>
+      <td>Pierced nose</td>
+      </tr>
+      <tr>
+      <td>19</td>
+      <td>Large, jug-like ears</td>
+      </tr>
+      <tr>
+      <td>20</td>
+      <td>Tattoo on wrist (roll on tattoo table)</td>
+      </tr>
+      <tr>
+      <td>21</td>
+      <td>Tattoo on arms (roll on tattoo table)</td>
+      </tr>
+      <tr>
+      <td>22</td>
+      <td>Bald (and roll again on this table)</td>
+      </tr>
+      <tr>
+      <td>23</td>
+      <td>Tattoo on neck (roll on tattoo table)</td>
+      </tr>
+      <tr>
+      <td>24</td>
+      <td>Missing part of ear</td>
+      </tr>
+      <tr>
+      <td>25</td>
+      <td>Obese <!-- yawn --></td>
+      </tr>
+      <tr>
+      <td>26</td>
+      <td>Missing teeth</td>
+      </tr>
+      <tr>
+      <td>27</td>
+      <td>Black teeth</td>
+      </tr>
+      <tr>
+      <td>28</td>
+      <td>Ragged, dirty clothing</td>
+      </tr>
+      <tr>
+      <td>29</td>
+      <td>Well dressed</td>
+      </tr>
+      <tr>
+      <td>30</td>
+      <td>Birthmark</td>
+      </tr>
+      <tr>
+      <td>31</td>
+      <td>Missing fingers</td>
+      </tr>
+      <tr>
+      <td>32</td>
+      <td>Crooked posture</td>
+      </tr>
+      <tr>
+      <td>33</td>
+      <td>Rigid posture</td>
+      </tr>
+      <tr>
+      <td>34</td>
+      <td>Nervous twitch</td>
+      </tr>
+      <tr>
+      <td>35</td>
+      <td>Blind</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>d100</th>
+          <th>Distinctive Feature</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+        <td>36</td>
+        <td>Mute</td>
+        </tr>
+        <tr>
+        <td>37</td>
+        <td>Missing arm</td>
+        </tr>
+        <tr>
+        <td>38</td>
+        <td>Missing leg</td>
+        </tr>
+        <tr>
+        <td>39</td>
+        <td>Sweaty</td>
+        </tr>
+        <tr>
+        <td>40</td>
+        <td>Large boil</td>
+        </tr>
+        <tr>
+        <td>41</td>
+        <td>Flaky, irritated skin</td>
+        </tr>
+        <tr>
+        <td>42</td>
+        <td>Heavily perfumed</td>
+        </tr>
+        <tr>
+        <td>43</td>
+        <td>Earthy smell</td>
+        </tr>
+        <tr>
+        <td>44</td>
+        <td>Bad breath</td>
+        </tr>
+        <tr>
+        <td>45</td>
+        <td>Walks with stick</td>
+        </tr>
+        <tr>
+        <td>46</td>
+        <td>Fancy boots</td>
+        </tr>
+        <tr>
+        <td>46</td>
+        <td>Thick accent</td>
+        </tr>
+        <tr>
+        <td>46</td>
+        <td>Heavily powdered face</td>
+        </tr>
+        <tr>
+        <td>46</td>
+        <td>Rouged lips and cheeks</td>
+        </tr>
+        <tr>
+        <td>47</td>
+        <td>Make-up to look like a mask (roll on mask table)</td>
+        </tr>
+        <tr>
+        <td>48</td>
+        <td>Non-binary</td>
+        </tr>
+        <tr>
+        <td>49</td>
+        <td>Long nails</td>
+        </tr>
+        <tr>
+        <td>50</td>
+        <td>Filthy</td>
+        </tr>
+        <tr>
+        <td>51</td>
+        <td>Scarred</td>
+        </tr>
+        <tr>
+        <td>52</td>
+        <td>Veiled</td>
+        </tr>
+        <tr>
+        <td>53</td>
+        <td>Bent back</td>
+        </tr>
+        <tr>
+        <td>54</td>
+        <td>Eye twitch</td>
+        </tr>
+        <tr>
+        <td>55</td>
+        <td>Albino</td>
+        </tr>
+        <tr>
+        <td>56</td>
+        <td>Humped Back</td>
+        </tr>
+        <tr>
+        <td>57</td>
+        <td>Pet</td>
+        </tr>
+        <tr>
+        <td>58</td>
+        <td>Companion (child, servant, etc.)</td>
+        </tr>
+      <tr>
+        <td>59</td>
+        <td>Pregnant</td>
+        </tr>
+        <tr>
+        <td>00</td>
+        <td>Roll on Weird Feature table</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+      <tr>
+      <th>d8</th>
+      <th>Weird Feature</th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Has tentacle for arm</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Snake tongue</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Feathered scalp</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Conjoined twin</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Cats eyes</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Mushrooms grow from their shoulders and back</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Gem in eye socket</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Unusual skin colour (green, blue, etc.)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+    <thead>
+    <tr>
+    <th>d10</th>
+    <th>Tattoo</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>Cricket</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>Sword</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>Knife</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>Ship and mermaids</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>6</td>
+    <td>Medusa&#39;s head</td>
+    </tr>
+    <tr>
+    <td>7</td>
+    <td>Dragon</td>
+    </tr>
+    <tr>
+    <td>8</td>
+    <td>Battle</td>
+    </tr>
+    <tr>
+    <td>9</td>
+    <td>Death&#39;s Head</td>
+    </tr>
+    <tr>
+    <td>10</td>
+    <td>Writing in strange language</td>
+    </tr>
+    </tbody>
+    </table>
+
+    <table>
+    <thead>
+    <tr>
+    <th>d6</th>
+    <th>Mask</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>Demon</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>Fox</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>Laughing Face</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>Crying Face</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>Blank Face</td>
+    </tr>
+    <tr>
+    <td>6</td>
+    <td>Skeleton</td>
+    </tr>
+    </tbody>
+    </table>
+  </main>
+
+</body>
+</html>

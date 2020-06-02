@@ -1,0 +1,33 @@
+@page {
+  size: A4;
+  margin: 0.5in;
+  background: white;
+
+  @bottom-center {
+    content: Page counter(page);
+  }
+}
+
+@media screen {
+  body {
+    background-color: whitesmoke;
+  }
+
+  .pagedjs_page {
+    background-color: #fdfdfd;
+    margin: 2em auto;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  }
+}
+
+main {
+  -webkit-column-gap: 2.5em;
+  -moz-column-gap: 2.5em;
+  column-gap: 2.5em;
+
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
+
+  margin-bottom: 1em;
+}
